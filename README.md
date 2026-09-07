@@ -38,11 +38,25 @@ Install required Ansible collections and roles:
 ansible-galaxy install -r requirements.yml
 ```
 
+The file [requirements.yml](requirements.yml) declares external roles and collections used by the project, such as Galaxy roles and shared Ansible collections. It is not used automatically by Ansible during a playbook run; it must be executed explicitly once in the environment to install the required dependencies.
+
 Check the installed tooling:
 
 ```bash
 ansible --version
 ```
+
+## Pre-commit setup
+
+Install the hook manager and register the project hooks:
+
+```bash
+python -m pip install pre-commit
+pre-commit install
+pre-commit run --all-files
+```
+
+This project includes a [.pre-commit-config.yaml](.pre-commit-config.yaml) file with basic Ansible hygiene checks, YAML validation, and `ansible-lint`.
 
 ## Notes
 

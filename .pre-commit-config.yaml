@@ -1,0 +1,28 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        files: \.(yaml|yml|jinja2|j2|md)$
+      - id: end-of-file-fixer
+        files: \.(yaml|yml|jinja2|j2|md)$
+      - id: mixed-line-ending
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: check-json
+      - id: check-merge-conflict
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        files: \.(yaml|yml)$
+
+  - repo: local
+    hooks:
+      - id: ansible-lint
+        name: ansible-lint
+        entry: ansible-lint
+        language: system
+        files: \.(yaml|yml)$
+        pass_filenames: true
