@@ -57,9 +57,3 @@ pre-commit run --all-files
 ```
 
 This project includes a [.pre-commit-config.yaml](.pre-commit-config.yaml) file with basic Ansible hygiene checks, YAML validation, and `ansible-lint`.
-
-## Notes
-
-- The project is intentionally simple and role-oriented.
-- Operational logic is delegated to roles under [roles/](roles/).
-- The current role is focused on Debian and RedHat family systems with systemd.
